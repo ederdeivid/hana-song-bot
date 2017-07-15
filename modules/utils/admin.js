@@ -1,3 +1,3 @@
-const admins = { id: '-1001076351019', name: 'Eduardo' }
+const admins = { id: '149414765', name: 'Eduardo' }
 
 module.exports = { admins }

@@ -9,7 +9,6 @@ const bot = new TelegramBot(TOKEN, { polling: true })
 
 bot.onText(/^\/([a-zA-Z]+) ?([^@]+)?(@.*bot)?/i, (msg, match) => {
   let command = match[1]
-
   if (command in commands) {
     command = commands[command]
     command.execute(msg, match, bot)
@@ -18,8 +17,20 @@ bot.onText(/^\/([a-zA-Z]+) ?([^@]+)?(@.*bot)?/i, (msg, match) => {
   }
 })
 
+bot.on('callback_query', callback => {
+  let match = callback.data
+  let msg = callback.message
+  console.log(msg)
+  _services.forEach((element, index) => {
+    if (_services[index].regex.test(match)) {
+      _services[index].fn(bot, msg, match)
+    }
+  })
+
+})
 
 bot.onText(/^([^\/]+)/i, (msg, match) => {
+  console.log(match[1])
   _services.forEach((element, index) => {
     if (_services[index].regex.test(msg.text)) {
       _services[index].fn(bot, msg, match)
@@ -28,7 +39,7 @@ bot.onText(/^([^\/]+)/i, (msg, match) => {
 })
 
 bot.on('message', (msg) => {
-  console.log(msg)
+  console.log(msg);
 });
 
 bot.on("left_chat_participant", msg => {

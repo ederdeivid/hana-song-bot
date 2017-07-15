@@ -4,8 +4,7 @@ const member = require('../utils/admin')
 const execute = (bot, msg) => {
   let idAdmin = member.admins.id
   let nameAdmin = member.admins.name
-  console.log(msg.chat.id, idAdmin)
-  if (msg.chat.id == idAdmin) {
+  if (msg.from.id == idAdmin) {
     let answers = [
       'Estou igual ao bumbum do Eder...🔥 ESTOU EM CHAMAS 🔥',
       'Pronta para conseguir uns abates... ☠☠🔫 ',

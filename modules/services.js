@@ -3,11 +3,14 @@ const entrar = require('./services/entrar')
 const elogios = require('./services/elogios')
 const rage = require('./services/rage')
 const eduwl = require('./services/eduwl')
+const stickerFeliz = require('./services/stickerFeliz')
+const heroTips = require('./services/heroTips')
+const hanaOptions = require('./services/hanaOptions')
 
 const defs = [
   {
     member: 'elogios',
-    regex: /(bot|hana|song|dva|d.va).*(foda|bonita|z(u|o)(e|ei)ra|legal|fofa|linda|chique|interessante|bacana|fera|boa|estraordin(á|a)ria|excelente|bolada|melhor|a melhor|fod(õ|o)na|best)/i,
+    regex: /(bot|hana|song|dva|d.va).*(foda|bonita|z(u|o)(e|ei)ra|legal|fofa|linda|chique|interessante|bacana|fera|boa|estraordin(á|a)ria|excelente|bolada|melhor|a melhor|fod(õ|o)na|best|top|topzera)/i,
     fn: (bot, msg, match) => elogios.execute(bot, msg, match ? match : []),
     eval: false
   },
@@ -22,7 +25,26 @@ const defs = [
     regex: /hana.*(como voce esta|status)/i,
     fn: (bot, msg, match) => eduwl.execute(bot, msg, match ? match : []),
     eval: false
-  }
+  },
+  {
+    member: 'stickerFeliz',
+    regex: /❤️|<3|S2(?:[^\d]+|$)/i,
+    fn: (bot, msg, match) => stickerFeliz.execute(bot, msg, match ? match : []),
+    eval: false
+  },
+  {
+    member: 'hanaOptions',
+    regex: /OW Tips & Tricks/i,
+    fn: (bot, msg, match) => hanaOptions.execute(bot, msg, match ? match : []),
+    eval: false
+  },
+  {
+    member: 'heroTips',
+    regex: /mercy.*(tips|tricks|guia|guide)/i,
+    fn: (bot, msg, match) => heroTips.mercy(bot, msg, match ? match : []),
+    eval: false
+  },
+
 ]
 
 module.exports = {
@@ -31,5 +53,5 @@ module.exports = {
   entrar,
   elogios,
   rage,
-  eduwl
+  eduwl,
 }
