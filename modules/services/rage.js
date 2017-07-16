@@ -4,7 +4,7 @@ const answers = [
   'Vai me pedir escudo quando a Phara Ultar... ಠ╭╮ಠ',
   'Olha só quem esta falando... ಠ_ಠ',
   'Eu tambem te amo 💖 ... Só que não.. ¬_¬',
-  'Devo te levar a serio mesmo ??? Xingando eu humilde bot como eu.. 😘 .. ◔ ⌣ ◔',
+  'Devo te levar a serio mesmo ??? Xingando um humilde bot como eu.. 😘 .. ◔ ⌣ ◔',
   'Se voce quer um autografo é só me pedir.... ASS: Com Amor DVA 💋.... ✍'
 ]
 

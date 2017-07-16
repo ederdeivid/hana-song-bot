@@ -16,7 +16,6 @@ const createKeyboard = (_heros) => {
       inline_keyboard: _heros
     }
   }
-
 }
 
 module.exports = { execute }

@@ -10,7 +10,7 @@ const hanaOptions = require('./services/hanaOptions')
 const defs = [
   {
     member: 'elogios',
-    regex: /(bot|hana|song|dva|d.va).*(foda|bonita|z(u|o)(e|ei)ra|legal|fofa|linda|chique|interessante|bacana|fera|boa|estraordin(á|a)ria|excelente|bolada|melhor|a melhor|fod(õ|o)na|best|top|topzera)/i,
+    regex: /(bot|hana|song|dva|d.va).*(foda|bonita|z(u|o)(e|ei)ra|legal|fofa|f(a|ã)|linda|chique|interessante|bacana|fera|boa|estraordin(á|a)ria|excelente|bolada|melhor|a melhor|fod(õ|o)na|best|top|topzera)/i,
     fn: (bot, msg, match) => elogios.execute(bot, msg, match ? match : []),
     eval: false
   },
@@ -34,17 +34,16 @@ const defs = [
   },
   {
     member: 'hanaOptions',
-    regex: /OW Tips & Tricks/i,
+    regex: /OW Dicas e Guias/i,
     fn: (bot, msg, match) => hanaOptions.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
     member: 'heroTips',
-    regex: /mercy.*(tips|tricks|guia|guide)/i,
-    fn: (bot, msg, match) => heroTips.mercy(bot, msg, match ? match : []),
+    regex: /(tips)/i,
+    fn: (bot, msg, match, nameTip) => heroTips.execute(bot, msg, match ? match : [], nameTip),
     eval: false
   },
-
 ]
 
 module.exports = {
@@ -54,4 +53,7 @@ module.exports = {
   elogios,
   rage,
   eduwl,
+  stickerFeliz,
+  hanaOptions,
+  heroTips
 }
