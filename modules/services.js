@@ -29,7 +29,7 @@ const defs = [
   },
   {
     member: 'stickerElogios',
-    regex: /❤️|<3|S2/i,
+    regex: /❤|❤️|<3|S2/i,
     fn: (bot, msg, match) => stickerElogios.execute(bot, msg, match ? match : []),
     eval: false
   },
@@ -47,7 +47,7 @@ const defs = [
   },
   {
     member: 'stickerOfensa',
-    regex: /(vadia|vagabunda|puta)/i,
+    regex: /^\bvadia\b|\bofensiva\b|\bvagabunda\b|\bputa\b/i,
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },

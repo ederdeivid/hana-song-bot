@@ -2,12 +2,12 @@
 
 const stickers = [
   'CAADAQADygADbePnCCyYVl3mtxCTAg',
-  'CAADAQAD1AADbePnCOZTINRwpgznAg',
-  'CAADAQAD7AADbePnCLVtX_9hq4h3Ag',
-  'CAADAQAD8AADbePnCONCyapdxSw4Ag',
-  'CAADAQADzwADbePnCHq9YybUUGY4Ag',
-  'CAADAQAD1QADbePnCIvgZzTiFutrAg',
-  'CAADAQADngADbePnCLxNjviX5a8vAg'
+  // 'CAADAQAD1AADbePnCOZTINRwpgznAg',
+  // 'CAADAQAD7AADbePnCLVtX_9hq4h3Ag',
+  // 'CAADAQAD8AADbePnCONCyapdxSw4Ag',
+  // 'CAADAQADzwADbePnCHq9YybUUGY4Ag',
+  // 'CAADAQAD1QADbePnCIvgZzTiFutrAg',
+  // 'CAADAQADngADbePnCLxNjviX5a8vAg'
 ]
 
 const execute = (bot, msg) => {

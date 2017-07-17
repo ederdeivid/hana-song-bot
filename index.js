@@ -17,6 +17,7 @@ bot.onText(/^\/([a-zA-Z]+) ?([^@]+)?(@.*bot)?/i, (msg, match) => {
 })
 
 bot.onText(/^([^\/]+)/i, (msg, match) => {
+  console.log(msg, match)
   _services.forEach((element, index) => {
     if (_services[index].regex.test(msg.text)) {
       _services[index].fn(bot, msg, match)
@@ -38,6 +39,14 @@ bot.on('callback_query', callback => {
 
 bot.on('message', (msg) => {
   console.log(msg)
+  if (msg.sticker) {
+    let match = msg.sticker.emoji
+    _services.forEach((element, index) => {
+      if (_services[index].regex.test(match)) {
+        _services[index].fn(bot, msg, match)
+      }
+    })
+  }
 });
 
 bot.on("left_chat_participant", msg => {

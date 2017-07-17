@@ -13,7 +13,7 @@ const execute = (bot, msg) => {
     bot.sendMessage(msg.chat.id, answers[Math.floor(Math.random() * answers.length)]).catch(console.log)
   } else {
     let answers = [
-      'Olhei aqui, e voce nem tem simbolo de diamante.... fala com a mao... 🤚',
+      // 'Olhei aqui, e voce nem tem simbolo de diamante.... fala com a mao... 🤚',
       'Não to afim de te responder...',
       'Sua moral comigo ta baixa...'
     ]
