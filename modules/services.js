@@ -1,11 +1,12 @@
 const sair = require('./services/sair')
 const entrar = require('./services/entrar')
 const elogios = require('./services/elogios')
-const rage = require('./services/rage')
-const eduwl = require('./services/eduwl')
-const stickerFeliz = require('./services/stickerFeliz')
+const ofensa = require('./services/ofensa')
+const admin = require('./services/admin')
+const stickerElogios = require('./services/stickerElogios')
 const heroTips = require('./services/heroTips')
-const hanaOptions = require('./services/hanaOptions')
+const heroSelect = require('./services/heroSelect')
+const stickerOfensa = require('./services/stickerOfensa')
 
 const defs = [
   {
@@ -15,33 +16,39 @@ const defs = [
     eval: false
   },
   {
-    member: 'rage',
-    regex: /(bot|hana|song|dva|d.va).*(lixo|retarda|noob|nob|inutil|demente|fdp|fdm|reatard(a|o)|d(u|o)en(te|ça)|i(z|zz)i|ez|put(a|o)|vagabund(a|o))/i,
-    fn: (bot, msg, match) => rage.execute(bot, msg, match ? match : []),
+    member: 'ofensa',
+    regex: /(bot|hana|song|dva|d.va).*(lixo|retarda|noob|nob|inutil|demente|fdp|fdm|reatard(a|o)|d(u|o)en(te|ça)|i(z|zz)i|ez|put(a|o)|vadia|vagabund(a|o))/i,
+    fn: (bot, msg, match) => ofensa.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
-    member: 'eduwl',
-    regex: /hana.*(como voce esta|status)/i,
-    fn: (bot, msg, match) => eduwl.execute(bot, msg, match ? match : []),
+    member: 'admin',
+    regex: /hana.*(test|status)/i,
+    fn: (bot, msg, match) => admin.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
-    member: 'stickerFeliz',
-    regex: /❤️|<3|S2(?:[^\d]+|$)/i,
-    fn: (bot, msg, match) => stickerFeliz.execute(bot, msg, match ? match : []),
+    member: 'stickerElogios',
+    regex: /❤️|<3|S2/i,
+    fn: (bot, msg, match) => stickerElogios.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
-    member: 'hanaOptions',
+    member: 'heroSelect',
     regex: /OW Dicas e Guias/i,
-    fn: (bot, msg, match) => hanaOptions.execute(bot, msg, match ? match : []),
+    fn: (bot, msg, match) => heroSelect.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
     member: 'heroTips',
     regex: /(tips)/i,
     fn: (bot, msg, match, nameTip) => heroTips.execute(bot, msg, match ? match : [], nameTip),
+    eval: false
+  },
+  {
+    member: 'stickerOfensa',
+    regex: /(vadia|vagabunda|puta)/i,
+    fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },
 ]
@@ -51,9 +58,10 @@ module.exports = {
   sair,
   entrar,
   elogios,
-  rage,
-  eduwl,
-  stickerFeliz,
-  hanaOptions,
-  heroTips
+  ofensa,
+  admin,
+  stickerElogios,
+  heroSelect,
+  heroTips,
+  stickerOfensa
 }

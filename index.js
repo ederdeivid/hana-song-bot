@@ -36,9 +36,9 @@ bot.on('callback_query', callback => {
 
 })
 
-// bot.on('message', (msg) => {
-//   // console.log(msg)
-// });
+bot.on('message', (msg) => {
+  console.log(msg)
+});
 
 bot.on("left_chat_participant", msg => {
   services.sair.execute(bot, msg)

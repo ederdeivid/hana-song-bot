@@ -3,7 +3,7 @@
 const answers = [
   'Kick eu não todos amam a D.va...| (• ◡•)|',
   'Mais um pra ser abatido in-game... (｡◕‿‿◕｡)',
-  'Menos um pra defender com minha matriz...ಠ‿↼',
+  'Menos um pra eu defender com minha matriz...ಠ‿↼',
   '¯\\_(ツ)_/¯'
 ]
 

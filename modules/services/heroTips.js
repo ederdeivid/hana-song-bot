@@ -1,6 +1,6 @@
 'use strict'
 
-const tips = require('../utils/linkTips')
+const tips = require('../utils/tricks')
 const _tips = tips.tricks
 
 const execute = (bot, msg, match, nameTip) => {
