@@ -1,13 +1,11 @@
 'use strict'
 
 const stickers = [
-  'CAADAQADygADbePnCCyYVl3mtxCTAg',
-  'CAADAQAD1AADbePnCOZTINRwpgznAg',
-  'CAADAQAD7AADbePnCLVtX_9hq4h3Ag',
-  'CAADAQAD8AADbePnCONCyapdxSw4Ag',
-  'CAADAQADzwADbePnCHq9YybUUGY4Ag',
-  'CAADAQAD1QADbePnCIvgZzTiFutrAg',
-  'CAADAQADngADbePnCLxNjviX5a8vAg'
+  'CAADAQAD8QADbePnCHB0Rlazl7vZAg',
+  'CAADAQADCwEAAm3j5winYzo04LxTfAI',
+  'CAADAQADCAEAAm3j5whAyH04uAauCwI',
+  'CAADAQAD2AADbePnCPcyZOs1meEbAg',
+  'CAADAQADxAADbePnCOOYSYG8giCWAg'
 ]
 
 const execute = (bot, msg) => {

@@ -9,7 +9,6 @@ const stickers = [
   'CAADAQADxQADbePnCBdatxYF8ZmWAg',
   'CAADAQAD3wADbePnCL3Mk_WpyVy_Ag',
   'CAADAQADrQADbePnCAXrZOAdqQtfAg',
-
 ]
 
 const execute = (bot, msg) => {

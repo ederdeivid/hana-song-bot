@@ -7,6 +7,7 @@ const stickerElogios = require('./services/stickerElogios')
 const heroTips = require('./services/heroTips')
 const heroSelect = require('./services/heroSelect')
 const stickerOfensa = require('./services/stickerOfensa')
+const stickerDespedida = require('./services/stickerDespedida')
 
 const defs = [
   {
@@ -25,6 +26,12 @@ const defs = [
     member: 'admin',
     regex: /hana.*(test|status)/i,
     fn: (bot, msg, match) => admin.execute(bot, msg, match ? match : []),
+    eval: false
+  },
+  {
+    member: 'admin',
+    regex: /hana.*(kick)/i,
+    fn: (bot, msg, match) => admin.kickMember(bot, msg, match ? match : []),
     eval: false
   },
   {
@@ -47,7 +54,7 @@ const defs = [
   },
   {
     member: 'stickerOfensa',
-    regex: /^(ofensiva|vadia|vagabunda|puta|(manda|send|envia) (nu(d|s))|(m|am)ostra as (tetas|peitos)|(dva|d.va|hana) ((m|am)anda|send|envia) (por(n|no)))$/i,
+    regex: /^(ofensiva|vadia|vagabunda|puta|(manda|send|envia) (nu(d|ds))|(m|am)ostra (a|o)s (tetas|peitos)|((m|am)anda|send|envia) por(n|no))$/i,
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },
@@ -55,6 +62,12 @@ const defs = [
     member: 'stickerOfensa',
     regex: /(essa|esta|ela).*(ofensiva|vadia|vagabunda|puta)/i,
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
+    eval: false
+  },
+  {
+    member: 'stickerDespedida',
+    regex: /^fl(w|ws)|fa(l|ll)ow|(x|tch)au|at(e|é) (logo|mais|depois)|v(o|ou) (dormir|nessa)|boa noite$/i,
+    fn: (bot, msg, match) => stickerDespedida.execute(bot, msg, match ? match : []),
     eval: false
   }
 ]
@@ -69,5 +82,6 @@ module.exports = {
   stickerElogios,
   heroSelect,
   heroTips,
-  stickerOfensa
+  stickerOfensa,
+  stickerDespedida
 }
