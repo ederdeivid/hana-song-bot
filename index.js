@@ -4,6 +4,8 @@ const commands = require('./modules/commands')
 const services = require('./modules/services')
 const _services = services.defs
 
+
+
 const bot = new TelegramBot(TOKEN, { polling: true })
 
 bot.onText(/^\/([a-zA-Z]+) ?([^@]+)?(@.*bot)?/i, (msg, match) => {
@@ -37,6 +39,7 @@ bot.on('callback_query', callback => {
 })
 
 bot.on('message', (msg) => {
+  console.log(msg)
   if (msg.sticker) {
     let match = msg.sticker.emoji
     _services.forEach((element, index) => {
@@ -53,4 +56,5 @@ bot.on("left_chat_participant", msg => {
 
 bot.on("new_chat_participant", msg => {
   services.entrar.execute(bot, msg)
+  
 })

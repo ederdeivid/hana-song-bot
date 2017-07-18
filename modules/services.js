@@ -18,7 +18,7 @@ const defs = [
   },
   {
     member: 'ofensa',
-    regex: /(bot|hana|song|dva|d.va).*(lixo|retarda|noob|nob|inutil|demente|fdp|fdm|reatard(a|o)|d(u|o)en(te|ça)|i(z|zz)i|ez|put(a|o)|vadia|vagabund(a|o))/i,
+    regex: /(bot|hana|song|dva|d.va).*(lixo|lixosa|lixona|lerda|feia|tonta|retarda|noob|nob|bicth|idio(t|ta)|(m|am)ostra as tetas|ofensiva|inutil|demente|fdp|fdm|reatard(a|o)|d(u|o)en(te|ça)|i(z|zz)i|ez|put(a|o)|vadia|vagabund(a|o)|vai da a bunda)/i,
     fn: (bot, msg, match) => ofensa.execute(bot, msg, match ? match : []),
     eval: false
   },
@@ -54,7 +54,7 @@ const defs = [
   },
   {
     member: 'stickerOfensa',
-    regex: /^(ofensiva|vadia|vagabunda|puta|(manda|send|envia) (nu(d|ds))|(m|am)ostra (a|o)s (tetas|peitos)|((m|am)anda|send|envia) por(n|no))$/i,
+    regex: /^(xiu lixona|Ent(ao|ão) se fod(e|er)|lesma|ofensiva|vadia|tonta|vagabunda|puta|(manda|send|envia) (nu(d|ds))|(m|am)ostra (a|o)s (tetas|peitos)|((m|am)anda|send|envia) por(n|no)|vai da a bunda)|gorda|imunda|imbecil|mostra a (xana|peka|ppk|pepeka)$/i,
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },

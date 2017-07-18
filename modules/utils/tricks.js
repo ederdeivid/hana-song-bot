@@ -5,11 +5,11 @@ const tricks = [
   },
   {
     name: 'McCree',
-    mcreeTips: 'Talvez isso possa lhe ajudar \n'
+    mcreeTips: 'O nome é McCree. \n'
   },
   {
     name: 'Mercy',
-    mercyTips: 'Dicas para Mercy, é sempre otimo bons suportes. \n'
+    mercyTips: 'Seu Anjo da Guarda. O que seria de nós sem bons suportes ???. \n'
     + '\n'
     + '⚜ Guia basico sobre o heroi. ⚜ \n'
     + 'https://goo.gl/Kqij8N - OverWatch Amino'
