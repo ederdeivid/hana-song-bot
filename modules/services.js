@@ -47,10 +47,16 @@ const defs = [
   },
   {
     member: 'stickerOfensa',
-    regex: /^\bvadia\b|\bofensiva\b|\bvagabunda\b|\bputa\b/i,
+    regex: /^(ofensiva|vadia|vagabunda|puta|(manda|send|envia) (nu(d|s))|(m|am)ostra as (tetas|peitos)|(dva|d.va|hana) ((m|am)anda|send|envia) (por(n|no)))$/i,
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },
+  {
+    member: 'stickerOfensa',
+    regex: /(essa|esta|ela).*(ofensiva|vadia|vagabunda|puta)/i,
+    fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
+    eval: false
+  }
 ]
 
 module.exports = {

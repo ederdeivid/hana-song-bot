@@ -5,7 +5,11 @@ const stickers = [
   'CAADAQADrgADbePnCIv8IquNQRRxAg',
   'CAADAQAD6QADbePnCHTSwDcsO3qUAg',
   'CAADAQADwAADbePnCGMR1RXHiyyGAg',
-  'CAADAQADTAYAAkEGgg6zmJ4_yLAVYgI'
+  'CAADAQADTAYAAkEGgg6zmJ4_yLAVYgI',
+  'CAADAQADxQADbePnCBdatxYF8ZmWAg',
+  'CAADAQAD3wADbePnCL3Mk_WpyVy_Ag',
+  'CAADAQADrQADbePnCAXrZOAdqQtfAg',
+
 ]
 
 const execute = (bot, msg) => {
