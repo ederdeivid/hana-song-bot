@@ -28,12 +28,12 @@ const defs = [
     fn: (bot, msg, match) => admin.execute(bot, msg, match ? match : []),
     eval: false
   },
-  {
+   {
     member: 'admin',
     regex: /hana.*(kick)/i,
     fn: (bot, msg, match) => admin.kickMember(bot, msg, match ? match : []),
     eval: false
-  },
+  }, 
   {
     member: 'stickerElogios',
     regex: /❤|❤️|<3|S2/i,

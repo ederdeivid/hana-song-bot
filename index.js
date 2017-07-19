@@ -39,7 +39,6 @@ bot.on('callback_query', callback => {
 })
 
 bot.on('message', (msg) => {
-  console.log(msg)
   if (msg.sticker) {
     let match = msg.sticker.emoji
     _services.forEach((element, index) => {
@@ -48,6 +47,11 @@ bot.on('message', (msg) => {
       }
     })
   }
+  // bot.getChatAdministrators(msg.chat.id).then(data => {
+  //   console.log(data)
+  // }).catch(err => {
+  //   console.err(err)
+  // })
 });
 
 bot.on("left_chat_participant", msg => {
@@ -56,5 +60,5 @@ bot.on("left_chat_participant", msg => {
 
 bot.on("new_chat_participant", msg => {
   services.entrar.execute(bot, msg)
-  
+
 })
