@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api')
-const TOKEN = 'SEU TOKEN AQUI'
+const TOKEN = '355435781:AAFj1u4K4GPJkmzfcZ0u_AH6GCA-pKxJfEo'
 const commands = require('./modules/commands')
 const services = require('./modules/services')
 const _services = services.defs
