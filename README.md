@@ -1,4 +1,4 @@
-# meu-bot-telegram
+# HANA SONG - BOT
 Hana Song - Bot
 
 Após o <b>git clone</b> execute dentro da pasta do projeto <b>npm install</b> e baixe as dependencia.<p>
