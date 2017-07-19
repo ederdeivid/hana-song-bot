@@ -2,38 +2,37 @@ const sair = require('./services/sair')
 const entrar = require('./services/entrar')
 const elogios = require('./services/elogios')
 const ofensa = require('./services/ofensa')
-const admin = require('./services/admin')
+const kickMember = require('./services/kickMember')
 const stickerElogios = require('./services/stickerElogios')
 const heroTips = require('./services/heroTips')
 const heroSelect = require('./services/heroSelect')
 const stickerOfensa = require('./services/stickerOfensa')
 const stickerDespedida = require('./services/stickerDespedida')
+const restrictMember = require('./services/restrictMember')
+
+const ofensasRegExp = require('./RegExp/ofensasRegExp')
+const elogiosRegExp = require('./RegExp/elogiosRegExp')
+const despedidaRegExp = require('./RegExp/despedidaRegExp')
 
 const defs = [
   {
     member: 'elogios',
-    regex: /(bot|hana|song|dva|d.va).*(foda|bonita|z(u|o)(e|ei)ra|legal|fofa|f(a|ã)|linda|chique|interessante|bacana|fera|boa|estraordin(á|a)ria|excelente|bolada|melhor|a melhor|fod(õ|o)na|best|top|topzera)/i,
+    regex: new RegExp(`(bot|hana|song|dva|d.va).*${elogiosRegExp.elogios}`, 'i'),
     fn: (bot, msg, match) => elogios.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
     member: 'ofensa',
-    regex: /(bot|hana|song|dva|d.va).*(lixo|lixosa|lixona|lerda|feia|tonta|retarda|noob|nob|bicth|idio(t|ta)|(m|am)ostra as tetas|ofensiva|inutil|demente|fdp|fdm|reatard(a|o)|d(u|o)en(te|ça)|i(z|zz)i|ez|put(a|o)|vadia|vagabund(a|o)|vai da a bunda)/i,
+    regex: new RegExp(`(bot|hana|song|dva|d.va).*${ofensasRegExp.ofensas}`, 'i'),
     fn: (bot, msg, match) => ofensa.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
-    member: 'admin',
-    regex: /hana.*(test|status)/i,
-    fn: (bot, msg, match) => admin.execute(bot, msg, match ? match : []),
+    member: 'kickMember',
+    regex: /(hana|dva|d.va).*(kick)/i,
+    fn: (bot, msg, match) => kickMember.execute(bot, msg, match ? match : []),
     eval: false
   },
-   {
-    member: 'admin',
-    regex: /hana.*(kick)/i,
-    fn: (bot, msg, match) => admin.kickMember(bot, msg, match ? match : []),
-    eval: false
-  }, 
   {
     member: 'stickerElogios',
     regex: /❤|❤️|<3|S2/i,
@@ -54,34 +53,41 @@ const defs = [
   },
   {
     member: 'stickerOfensa',
-    regex: /^(xiu lixona|Ent(ao|ão) se fod(e|er)|lesma|ofensiva|vadia|tonta|vagabunda|puta|(manda|send|envia) (nu(d|ds))|(m|am)ostra (a|o)s (tetas|peitos)|((m|am)anda|send|envia) por(n|no)|vai da a bunda)|gorda|imunda|imbecil|mostra a (xana|peka|ppk|pepeka)$/i,
+    regex: new RegExp(`${ofensasRegExp.ofensasSticker}`,'i'),
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
     member: 'stickerOfensa',
-    regex: /(essa|esta|ela).*(ofensiva|vadia|vagabunda|puta)/i,
+    regex: new RegExp(`(essa|est(á|a)|ela).*${ofensasRegExp.ofensasSticker2}`,'i'),
     fn: (bot, msg, match) => stickerOfensa.execute(bot, msg, match ? match : []),
     eval: false
   },
   {
     member: 'stickerDespedida',
-    regex: /^fl(w|ws)|fa(l|ll)ow|(x|tch)au|at(e|é) (logo|mais|depois)|v(o|ou) (dormir|nessa)|boa noite$/i,
+    regex: new RegExp(`${despedidaRegExp.despedida}`, 'i'),
     fn: (bot, msg, match) => stickerDespedida.execute(bot, msg, match ? match : []),
     eval: false
-  }
+  },
+  {
+    member: 'restrictMember',
+    regex: /(hana|dva|d.va).*(restrinja|limite)/i,
+    fn: (bot, msg, match) => restrictMember.execute(bot, msg, match ? match : []),
+    eval: false
+  },
 ]
-
+// console.log(defs)
 module.exports = {
   defs,
   sair,
   entrar,
   elogios,
   ofensa,
-  admin,
+  kickMember,
   stickerElogios,
   heroSelect,
   heroTips,
   stickerOfensa,
-  stickerDespedida
+  stickerDespedida,
+  restrictMember
 }

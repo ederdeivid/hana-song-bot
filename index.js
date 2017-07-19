@@ -1,10 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api')
-const TOKEN = '355435781:AAFj1u4K4GPJkmzfcZ0u_AH6GCA-pKxJfEo'
+const TOKEN = 'SEU TOKEN AQUI'
 const commands = require('./modules/commands')
 const services = require('./modules/services')
 const _services = services.defs
-
-
 
 const bot = new TelegramBot(TOKEN, { polling: true })
 
@@ -39,6 +37,7 @@ bot.on('callback_query', callback => {
 })
 
 bot.on('message', (msg) => {
+  // console.log(msg)
   if (msg.sticker) {
     let match = msg.sticker.emoji
     _services.forEach((element, index) => {
@@ -47,11 +46,6 @@ bot.on('message', (msg) => {
       }
     })
   }
-  // bot.getChatAdministrators(msg.chat.id).then(data => {
-  //   console.log(data)
-  // }).catch(err => {
-  //   console.err(err)
-  // })
 });
 
 bot.on("left_chat_participant", msg => {
@@ -60,5 +54,4 @@ bot.on("left_chat_participant", msg => {
 
 bot.on("new_chat_participant", msg => {
   services.entrar.execute(bot, msg)
-
 })
